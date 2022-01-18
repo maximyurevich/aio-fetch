@@ -24,7 +24,7 @@ async def fetch(client: ClientSession, url: str) -> str:
 async def main():
     """main function"""
     async with ClientSession() as session:
-        url = 'https://www.nasa.gov/press-release/nasa-tv-to-air-spacex-cargo-dragon-departure-from-space-station'
+        url = 'https://go.nasa.gov/3GFJChb'
         html = await fetch(session, url)
         logging.info(html)
 
