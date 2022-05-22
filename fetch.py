@@ -1,6 +1,7 @@
 """Aiohttp fetch function"""
 import asyncio
 import logging
+from sys import platform
 from aiohttp.client import ClientSession
 
 
@@ -29,5 +30,6 @@ async def main():
         logging.info(html)
 
 if __name__ == '__main__':
-    asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
+    if platform == 'win32':
+        asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
     asyncio.run(main())
